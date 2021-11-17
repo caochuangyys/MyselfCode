@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.caoc</groupId>
+    <artifactId>nft-server</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>nft-server</name>
+    <description>第十创造</description>
+
+    <modules>
+        <module>nft-api</module>
+        <module>nft-core</module>
+        <module>nft-data</module>
+        <module>nft-generator</module>
+        <module>nft-service</module>
+    </modules>
+
+    <properties>
+        <project.version>1.0.0-SNAPSHOT</project.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>8</java.version>
+        <spring-boot-maven-plugin.version>2.2.6.RELEASE</spring-boot-maven-plugin.version>
+        <spring-boot-dependencies.version>2.3.4.RELEASE</spring-boot-dependencies.version>
+        <gridexcel.version>2.3</gridexcel.version>
+        <okhttp.version>4.9.0</okhttp.version>
+        <aliyun.sdk.version>4.5.11</aliyun.sdk.version>
+        <aliyun.sdk.oss.version>3.11.1</aliyun.sdk.oss.version>
+        <aliyun.sdk.live.version>3.9.4</aliyun.sdk.live.version>
+        <mybatis.plus.version>3.3.1</mybatis.plus.version>
+        <mybatis-plus-support.version>2.3.3</mybatis-plus-support.version>
+        <mysql-connector-java.version>8.0.21</mysql-connector-java.version>
+        <druid.version>1.1.24</druid.version>
+        <hutool.version>5.4.3</hutool.version>
+        <google.guava.version>29.0-jre</google.guava.version>
+        <weixin-pay-sdk.version>3.9.0</weixin-pay-sdk.version>
+        <lombok.version>1.18.12</lombok.version>
+        <alibaba.fastjson.version>1.2.73</alibaba.fastjson.version>
+        <apache.httpclient.version>4.5.12</apache.httpclient.version>
+        <swagger.knife4j.version>2.0.8</swagger.knife4j.version>
+        <swagger.version>1.6.2</swagger.version>
+        <velocity.version>1.7</velocity.version>
+        <javax.validation.version>2.0.1.Final</javax.validation.version>
+        <commons-lang3.version>3.11</commons-lang3.version>
+        <hibernate-validator.version>6.1.6.Final</hibernate-validator.version>
+        <pinyin4j.version>2.5.1</pinyin4j.version>
+        <poi.version>4.1.2</poi.version>
+        <spring.elasticsearch.version>4.0.5.RELEASE</spring.elasticsearch.version>
+        <org.apache.mahout.version>0.9</org.apache.mahout.version>
+        <guava.version>30.1-jre</guava.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.caoc</groupId>
+                <artifactId>nft-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.caoc</groupId>
+                <artifactId>nft-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.caoc</groupId>
+                <artifactId>nft-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.caoc</groupId>
+                <artifactId>nft-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.caoc</groupId>
+                <artifactId>nft-generator</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--springboot-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <!-- 阿里云 核心 -->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-core</artifactId>
+                <version>${aliyun.sdk.version}</version>
+            </dependency>
+
+            <!-- 阿里云对象存储 -->
+            <dependency>
+                <groupId>com.aliyun.oss</groupId>
+                <artifactId>aliyun-sdk-oss</artifactId>
+                <version>${aliyun.sdk.oss.version}</version>
+            </dependency>
+
+            <!--阿里云直播-->
+            <dependency>
+                <groupId>com.aliyun</groupId>
+                <artifactId>aliyun-java-sdk-live</artifactId>
+                <version>${aliyun.sdk.live.version}</version>
+            </dependency>
+
+            <!-- mybatis plus 依赖 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-support</artifactId>
+                <version>${mybatis-plus-support.version}</version>
+            </dependency>
+
+            <!--velocity-->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>${velocity.version}</version>
+            </dependency>
+
+            <!-- mysql -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+
+            <!-- 阿里巴巴 数据源 Druid -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- lombok 工具 -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <!-- 阿里巴巴 json 解析 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${alibaba.fastjson.version}</version>
+            </dependency>
+
+            <!-- google guava -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${google.guava.version}</version>
+            </dependency>
+
+            <!--poi excel-->
+            <dependency>
+                <groupId>com.github.liuhuagui</groupId>
+                <artifactId>gridexcel</artifactId>
+                <version>${gridexcel.version}</version>
+            </dependency>
+
+
+            <!--hutool-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <!--apache-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${apache.httpclient.version}</version>
+            </dependency>
+
+            <!--swagger-->
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${swagger.knife4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
+            <!--validation-->
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax.validation.version}</version>
+            </dependency>
+
+            <!--拼音转化-->
+            <dependency>
+                <groupId>com.belerweb</groupId>
+                <artifactId>pinyin4j</artifactId>
+                <version>${pinyin4j.version}</version>
+            </dependency>
+
+            <!-- 引入poi，解析workbook视图 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi-ooxml</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
+
+            <!--添加elsaticsearch搜索引擎-->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-elasticsearch</artifactId>
+                <version>${spring.elasticsearch.version}</version>
+            </dependency>
+
+            <!-- google 工具类 -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <url></url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <url></url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot-maven-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+
+</project>

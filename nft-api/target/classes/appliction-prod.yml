@@ -1,0 +1,33 @@
+
+########################################################
+###MySql (MySqlConfiguration)
+########################################################
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://rm-bp137y200819198hk.mysql.rds.aliyuncs.com:3306/dgj_db_prod?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+      username: dgj_acc_prod
+      password: Dgj123!@#
+      max-active: 30
+      min-idle: 5
+      max-wait: 10000
+      validation-query: "SELECT X"
+  redis:
+    host: r-bp16787cdbecd0a4.redis.rds.aliyuncs.com
+    port: 6379
+    database: 1
+    password: dgj_redis_prod:Dgj123!@#
+
+sms:
+  type: aliyun
+
+aliyun:
+  oss:
+    accessId: LTAI5tGixBTDqnTic9hrv5gC
+    accessKey: DLLLNa0yEf72QdskutZkGNNP5bcY8z
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    bucket: dgj-prod
+    callbackUrl:
+    dir: imgs/
+    baseUrl: https://dgj-prod.oss-cn-hangzhou.aliyuncs.com/

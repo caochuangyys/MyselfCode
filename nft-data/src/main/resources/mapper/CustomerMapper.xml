@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nft.data.mapper.CustomerMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.nft.data.entity.CustomerDO">
+        <result column="id" property="id" />
+        <result column="gmt_create" property="gmtCreate" />
+        <result column="gmt_update" property="gmtUpdate" />
+        <result column="deleted" property="deleted" />
+        <result column="customer_type" property="customerType" />
+        <result column="name" property="name" />
+        <result column="papers_type" property="papersType" />
+        <result column="person_idno" property="personIdno" />
+        <result column="gender" property="gender" />
+        <result column="age" property="age" />
+        <result column="contact_information" property="contactInformation" />
+        <result column="address" property="address" />
+        <result column="credit_authorize" property="creditAuthorize" />
+        <result column="loan_amount" property="loanAmount" />
+        <result column="loan_term" property="loanTerm" />
+        <result column="loan_purpose" property="loanPurpose" />
+        <result column="enterprise_name" property="enterpriseName" />
+        <result column="license_no" property="licenseNo" />
+        <result column="operation_status" property="operationStatus" />
+        <result column="establish_time" property="establishTime" />
+        <result column="capital" property="capital" />
+        <result column="enterprise_nature" property="enterpriseNature" />
+        <result column="employees_number" property="employeesNumber" />
+        <result column="industry" property="industry" />
+        <result column="is_long_term" property="isLongTerm" />
+        <result column="start_business_term" property="startBusinessTerm" />
+        <result column="end_business_term" property="endBusinessTerm" />
+        <result column="company_details" property="companyDetails" />
+        <result column="license" property="license" />
+        <result column="id_front" property="idFront" />
+        <result column="id_back" property="idBack" />
+        <result column="admin_id" property="adminId" />
+        <result column="loan_products_id" property="loanProductsId" />
+        <result column="guarantee_id" property="guaranteeId" />
+        <result column="handle_opinion" property="handleOpinion" />
+        <result column="register_status" property="registerStatus" />
+        <result column="final_credit_amount" property="finalCreditAmount" />
+        <result column="approval_opinion" property="approvalOpinion" />
+        <result column="approval_status" property="approvalStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id,
+        gmt_create,
+        gmt_update,
+        deleted,
+        customer_type,
+        name,
+        papers_type,
+        person_idno,
+        gender,
+        age,
+        contact_information,
+        address,
+        credit_authorize,
+        loan_amount,
+        loan_term,
+        loan_purpose,
+        enterprise_name,
+        license_no,
+        operation_status,
+        establish_time,
+        capital,
+        enterprise_nature,
+        employees_number,
+        industry,
+        is_long_term,
+        start_business_term,
+        end_business_term,
+        company_details,
+        license,
+        id_front,
+        id_back,
+        admin_id,
+        loan_products_id,
+        guarantee_id,
+        handle_opinion,
+        register_status,
+        final_credit_amount,
+        approval_opinion,
+        approval_status
+    </sql>
+
+</mapper>

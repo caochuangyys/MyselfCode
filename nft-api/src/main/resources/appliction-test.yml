@@ -1,0 +1,25 @@
+
+########################################################
+###MySql (MySqlConfiguration)
+########################################################
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/nft_db_test??characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+      username: root
+      password: cc123456
+      max-active: 30
+      min-idle: 5
+      max-wait: 10000
+      validation-query: "SELECT X"
+  redis:
+    host: 172.17.0.1
+    port: 6379
+    database: 0
+
+########################################################
+### 短信SDK配置 type 支持 aliyun、mock(请在控制台查看验证码)
+########################################################
+sms:
+  type: aliyun

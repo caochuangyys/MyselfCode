@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="nft-generator" />
+        <module name="nft-data" />
+        <module name="nft-core" />
+        <module name="nft-service" />
+        <module name="nft-api" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="nft-api" options="-parameters" />
+      <module name="nft-core" options="-parameters" />
+      <module name="nft-data" options="-parameters" />
+      <module name="nft-generator" options="-parameters" />
+      <module name="nft-service" options="-parameters" />
+    </option>
+  </component>
+</project>

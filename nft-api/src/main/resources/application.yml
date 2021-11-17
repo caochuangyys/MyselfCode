@@ -1,0 +1,113 @@
+server:
+  port: 8081
+  undertow:
+    buffer-size: 1024
+    direct-buffers: false
+  servlet:
+    context-path: /api
+
+
+###########################################
+#####Mysql(MySqlConfiguration)
+###########################################
+spring:
+  application:
+    name: nft-api
+  profiles:
+    active: "@profiles.active@"
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/nft_db_test?characterEncoding_UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+      username: root
+      password: cc123456
+      max-active: 30
+      min-idle: 5
+      max-wait: 10000
+      validation-query: "SELECT X"
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
+  servlet:
+    multipart:
+      max-file-size: 40MB
+      max-request-size: 100MB
+
+#####knife4j 配置
+nft:
+  swagger:
+    contact:
+      name: caochuang
+      url:
+      email:
+    title: 第十创造服务接口
+    description: 第十创造服务接口文档
+    version: 1.0
+    base-package: "com.nft"
+    base-path: /**
+    docket:
+      admin:
+        contact:
+          name: caochuang
+        title: 管理后台服务接口
+        description: 管理后台相关接口
+        version: 1.0
+        base-package: "com.nft.controller.admin"
+        base-path: /admin/**
+      commons:
+        contact:
+          name: caochuang
+        title: 公共接口
+        description: 公共接口
+        version: 1.0
+        base-package: "com.nft.controller.commons"
+        base-path: /commons/**
+########################################################
+### 短信SDK配置 type 支持 aliyun、mock(请在控制台查看验证码)
+########################################################
+sms:
+  type: mock
+
+###阿里云配置：
+aliyun:
+  sms:
+    accessId: LTAI5t9STq7w4R3AmtthrQ1F
+    accessKey: 22Zm3JhrS54gbYO7ibWNwGwXHZUSbB
+    signature: 工基科技
+    login-code-template-id: SMS_213320028
+    register-code-template-id: SMS_213320026
+    modify-pwd-template-id: SMS_213320025
+    send-reserve-template-id: SMS_216374735
+    trader-audit-pass-template-id: SMS_216429834
+    trader-audit-fail-template-id: SMS_216374736
+    send-withdraw-money-reminder-id: SMS_217438688
+    send-successful-withdrawal-id: SMS_217438692
+    send-recharge-reminder-id: SMS_217418492
+    send-balance-change-id: SMS_217418514
+    send-recharge-fail-id: SMS_217418724
+    send-withdrawal-fail-id: SMS_217428825
+
+  oss:
+    accessId: LTAI5tDwabgt7oLAhShSge8g
+    accessKey: K8p9cgcQuyfH7B7B1UNk4reGfCYLkk
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+    bucket: dgj-test
+    callbackUrl:
+    dir: imgs/
+    baseUrl: https://dgj-test.oss-cn-hangzhou.aliyuncs.com/
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:/mapper/*.xml
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      logic-delete-field: deleted
