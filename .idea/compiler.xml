@@ -7,10 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="nft-generator" />
+        <module name="nft-service" />
         <module name="nft-data" />
         <module name="nft-core" />
-        <module name="nft-service" />
+        <module name="nft-generator" />
         <module name="nft-api" />
       </profile>
     </annotationProcessing>

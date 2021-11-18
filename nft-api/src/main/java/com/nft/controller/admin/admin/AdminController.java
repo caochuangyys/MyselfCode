@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * 管理员表 前端控制器
+ * 管理员表
  *
  * @author caoc
  * @createDate 2021/11/15
